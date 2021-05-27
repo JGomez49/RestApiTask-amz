@@ -1,6 +1,7 @@
 // const express = require('express');
 
 import express from 'express'
+import indexRoutes from './routes/index'
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.get('/', (req,res)=>{
         message: "Welcome to the jungle baby!"
     });
 });
+
+app.use(indexRoutes)
 
 app.listen(app.get('port'));
 
