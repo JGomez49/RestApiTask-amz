@@ -1,19 +1,9 @@
-// const express = require('express');
+// este modulo solo tiene la tarea de arracar la aplicacion
+import app from './app'
+import './database'
 
-import express from 'express'
-import indexRoutes from './routes/index'
-
-const app = express();
-
-app.set('port', process.env.PORT || 3000);
-
-app.get('/', (req,res)=>{
-    res.json({
-        message: "Welcome to the jungle baby!"
-    });
-});
-
-app.use(indexRoutes)
+console.log('Hola '+ process.env.USERNAME);
+console.log('La fecha actual es: '+ Date());
 
 app.listen(app.get('port'));
 
